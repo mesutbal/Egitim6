@@ -1,12 +1,13 @@
 import React from 'react';
 import { View, StyleSheet, Alert } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Button, Snackbar } from 'react-native-paper';
 
 
 export default class ButtonScreen extends React.Component {
     state = {  
         hatavar: false,
-        kullaniciadi: ''
+        kullaniciadi: '',
+        goster: true
     }
 
     buttonClicked() {
@@ -27,6 +28,19 @@ export default class ButtonScreen extends React.Component {
             </Button>
             <Button icon="android" mode="outlined" style={styles.textStyle}>Android</Button>
             <Button icon="android" mode="text" style={styles.textStyle}>Android</Button>
+            <Snackbar 
+                visible={this.state.goster}
+                onDismiss={() => this.setState({ goster: false })}
+                duration={3000}
+                action={{
+                    label: 'Tamam',
+                    onPress: () => {
+
+                    }
+                }}
+            >
+                React Native !
+            </Snackbar>
         </View>);
     }
 }
