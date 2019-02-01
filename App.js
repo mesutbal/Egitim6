@@ -4,6 +4,7 @@ import { createDrawerNavigator, createAppContainer } from 'react-navigation';
 import { Provider as PaperProvider } from 'react-native-paper';
 import ScrollScreen from './src/screens/scroll/ScrollScreen';
 import TextInputScreen from './src/screens/textinput/TextInputScreen';
+import ButtonScreen from './src/screens/button/ButtonScreen';
 
 
 const Drawer = createDrawerNavigator({
@@ -18,10 +19,16 @@ const Drawer = createDrawerNavigator({
       navigationOptions: {
         title: 'Text Input'
       }
+    },
+    Button: {
+      screen: ButtonScreen,
+      navigationOptions: {
+        title: 'Button'
+      }
     }
   },
   {
-    initialRouteName: 'TextInput',
+    initialRouteName: 'Button',
     drawerWidth: Dimensions.get('window').width * 0.8
   }
 );
